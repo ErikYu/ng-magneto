@@ -1,0 +1,41 @@
+@import '../../style/mixin/default';
+@import './ngm-button.mixin.less';
+
+.mag-btn {
+    height: @btn-md-height;
+    border: none;
+    &:focus{
+        outline: none;
+    }
+}
+.mag-btn-primary {
+    .btn-varible(@btn-color, @btn-primary-color, @btn-primary-active, @btn-primary-hover);
+}
+
+.mag-btn-warning {
+    .btn-varible(@btn-color, @btn-warning-color, @btn-warning-active, @btn-warning-hover);
+}
+
+.mag-btn-success {
+    .btn-varible(@btn-color, @btn-success-color, @btn-success-active, @btn-success-hover);
+}
+
+.mag-btn-info {
+    .btn-varible(@btn-color, @btn-info-color, @btn-info-active, @btn-info-hover);
+}
+
+.mag-btn-danger {
+    .btn-varible(@btn-color, @btn-danger-color, @btn-danger-active, @btn-danger-hover);
+}
+
+.mag-btn-small {
+    height: @btn-sm-height
+}
+
+.mag-btn-middle {
+    height: @btn-md-height
+}
+
+.mag-btn-large {
+    height: @btn-lg-height
+}

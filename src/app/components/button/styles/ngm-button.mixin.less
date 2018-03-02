@@ -1,0 +1,16 @@
+.btn-varible(@color, @bgColor, @bgColorActive, @bgColorHover) {
+    .btn-color(@color, @bgColor);
+
+    &:hover, &:focus {
+        .btn-color(@color, @bgColorHover);
+    }
+
+    &:active {
+        .btn-color(@color, @bgColorActive);
+    }
+}
+
+.btn-color(@color, @bgColor) {
+    color: @color;
+    background-image: @bgColor;
+}
