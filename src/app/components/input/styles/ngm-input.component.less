@@ -1,0 +1,57 @@
+@import '../../style/mixin/default';
+.mag-input {
+    .input();
+    border: @input-border;
+    &:focus {
+        outline: none;
+        border: @input-border-focus;
+    }
+}
+
+.mag-input-sm {
+    .input-sm();
+}
+
+.mag-input-md {
+    .input-md();
+}
+
+.mag-input-lg {
+    .input-lg();
+}
+
+.input() {
+    color: @input-color;
+    background-color: @input-bgcolor;
+    padding-left: @input-padding-left;
+}
+
+.input-sm() {
+    height: @input-sm-height;
+    border-radius: @input-border-radius;
+}
+
+.input-md() {
+    height: @input-md-height;
+    border-radius: @input-border-radius;
+}
+
+.input-lg() {
+    height: @input-lg-height;
+    border-radius: @input-border-radius;
+}
+
+
+// 修改placeholder的颜色
+.mag-input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #dadfe6;
+}
+.mag-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #dadfe6;
+}
+.mag-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #dadfe6;
+}
+.mag-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #dadfe6;
+}
