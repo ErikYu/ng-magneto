@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   smallVal = 'uuu'
+  change() {
+      console.log(233123)
+  }
+  blur() {
+      console.log('blur')
+  }
+  focus() {
+      console.log('focus')
+  }
 }

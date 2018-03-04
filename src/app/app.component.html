@@ -16,8 +16,9 @@
 <button ngm-button [ngmType]="'info'" [ngmSize]="'large'">Primary</button>
 <button ngm-button [ngmType]="'danger'" [ngmSize]="'large'">Primary</button>
 <p>---</p>
-<ngm-input [ngmSize]="'small'" [ngmPlaceholder]="'small'" [(ngModel)]="smallVal"></ngm-input>
-<ngm-input [ngmSize]="'middle'" [ngmPlaceholder]="'middle'"></ngm-input>
+<ngm-input (NgmBlur)="blur()" (NgmFocus)="focus()" [ngmSize]="'small'" [ngmPlaceholder]="'small'" [(ngModel)]="smallVal" (ngModelChange)="change()"></ngm-input>
+<ngm-input [ngmSize]="'middle'" [ngmPlaceholder]="'middle'" [ngmDisabled]="true"></ngm-input>
 <ngm-input [ngmSize]="'large'" [ngmPlaceholder]="'large'"></ngm-input>
+<input type="text" [(ngModel)]="smallVal" (ngModelChange)="change($event)">
 
 

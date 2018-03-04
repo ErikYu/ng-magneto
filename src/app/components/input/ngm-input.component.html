@@ -1,5 +1,9 @@
 <!-- <ng-template> -->
 <input
+    (blur)="_emitBlur()"
+    (focus)="_emitFocus()"
+    [disabled]="ngmDisabled"
+    [readonly]="ngmReadonly"
     class="mag-input"
     placeholder="ngmPlaceholder"
     [ngClass]="_classMap"

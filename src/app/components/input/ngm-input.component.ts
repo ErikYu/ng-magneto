@@ -1,4 +1,19 @@
-import { Component, Input, ElementRef, HostListener, forwardRef, ViewEncapsulation } from '@angular/core';
+/**
+ * input自定义组件
+ * 需要绑定：
+ * 1. ngModel，利用ControlValueAccessor, NG_VALUE_ACCESSOR和相关钩子实现
+ * 2. blur，需要emit相应事件
+ */
+import {
+    Component,
+    Input,
+    ElementRef,
+    HostListener,
+    forwardRef,
+    ViewEncapsulation,
+    Output,
+    EventEmitter,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export type InputSize = 'sm' | 'md' | 'lg';
@@ -24,6 +39,8 @@ export class NgmInputComponent implements ControlValueAccessor {
     private _value: string;
 
     @Input() ngmPlaceholder: string;
+    @Input() ngmDisabled: boolean;
+    @Input() ngmReadonly: boolean;
 
     @Input()
     get ngmSize(): InputSize {
@@ -60,7 +77,6 @@ export class NgmInputComponent implements ControlValueAccessor {
     }
 
     // ngModel 绑定数据
-
     get ngmValue() {
         return this._value;
     }
@@ -73,6 +89,18 @@ export class NgmInputComponent implements ControlValueAccessor {
         if (!this._composing) {
             this.onChange(val);
         }
+    }
+
+    // blur
+    @Output() NgmBlur: EventEmitter<FocusEvent> = new EventEmitter()
+    _emitBlur() {
+        this.NgmBlur.emit();
+    }
+
+    // focus
+    @Output() NgmFocus: EventEmitter<FocusEvent> = new EventEmitter()
+    _emitFocus() {
+        this.NgmFocus.emit();
     }
 
     constructor(private elementRef: ElementRef) {
